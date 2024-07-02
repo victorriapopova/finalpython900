@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Services - My Auto Service{% endblock %}
+
+{% block content %}
+<h1>Our Services</h1>
+
+<ul>
+    {% for service in services %}
+    <li>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+        <p>Price: ${{ service.price }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

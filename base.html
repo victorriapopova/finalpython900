@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romas Final</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button class="nav-button"><a href="{{ url_for('index') }}">Home</a></button></li>
+                <li><button class="nav-button"><a href="{{ url_for('services') }}">Services</a></button></li>
+                <li><button class="nav-button"><a href="{{ url_for('reviews') }}">Reviews</a></button></li>
+                <li><button class="nav-button"><a href="{{ url_for('contact') }}">Contact</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Romas Final. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

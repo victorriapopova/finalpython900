@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Auto Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to My Auto Service</h1>
+            <p>Here you can find a wide range of services for your vehicle.</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="services-section">
+                <h2>Explore Our Services</h2>
+                <div class="services">
+                    <a href="#" class="btn btn-primary">Car Repairs</a>
+                    <a href="#" class="btn btn-primary">Oil Change</a>
+                    <a href="#" class="btn btn-primary">Wheel Alignment</a>
+                    <a href="#" class="btn btn-primary">Tire Replacement</a>
+                    <a href="#" class="btn btn-primary">Brake Service</a>
+                </div>
+            </section>
+
+            <section class="review-section">
+                <h2>Customer Reviews</h2>
+                <form action="{{ url_for('reviews') }}" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="review">Review:</label>
+                    <textarea id="review" name="review" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-secondary">Submit Review</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Romas Final. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

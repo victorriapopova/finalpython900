@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Reviews - My Auto Service{% endblock %}
+
+{% block content %}
+<h1>Customer Reviews</h1>
+
+{% for review in reviews %}
+<div class="review">
+    <h3>{{ review.author }}</h3>
+    <p>{{ review.content }}</p>
+    <small>{{ review.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</small>
+</div>
+{% endfor %}
+
+<hr>
+<h2>Add Your Review</h2>
+<form method="POST" action="{{ url_for('reviews') }}">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.author.label }}<br>
+        {{ form.author(size=30) }}<br>
+        {% for error in form.author.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.content.label }}<br>
+        {{ form.content(cols=50, rows=10) }}<br>
+        {% for error in form.content.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div>{{ form.submit() }}</div>
+</form>
+{% endblock %}
